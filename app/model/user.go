@@ -8,5 +8,5 @@ type User struct {
 	PassWord string
 	NickName string
 	Status   uint8
-	Avatar   string `gorm:""size:1000""`
+	Avatar   string
 }
