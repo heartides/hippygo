@@ -7,8 +7,14 @@ import (
 )
 
 // controller 路由定义
-func InitRouter() *gin.Engine {
+func init() {
 	router := gin.Default()
-	router.GET("/", utils.Handle(controller.Post))
-	return router
+
+	v1 := router.Group("/api/v1")
+	{
+		v1.GET("/", utils.Handle(controller.Post))
+	}
+
+
+	router.Run(":3030")
 }

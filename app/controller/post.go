@@ -5,5 +5,5 @@ import (
 )
 
 func Post(cxt *utils.Context)  {
-	cxt.Fail("登录失败",422)
+	cxt.Fail("hello",233)
 }

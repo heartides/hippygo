@@ -2,10 +2,9 @@ package main
 
 import (
 	_"learning/conf"
-	"learning/routers"
+	_"learning/routers"
 )
 
 func main() {
-	router := routers.InitRouter()
-	router.Run(":3030")
+
 }

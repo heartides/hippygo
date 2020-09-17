@@ -22,7 +22,7 @@ func Handle(handle HandlerFunc) gin.HandlerFunc {
 	}
 }
 
-func (c *Context) Success(data interface{}, msg ...string) {
+func (c *Context) Success(data map[string]interface{}, msg ...string) {
 	res := Response{
 		Data: data,
 		Code: 0,
