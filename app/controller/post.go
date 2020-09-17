@@ -1,7 +1,9 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"learning/utils"
+)
 
-func Post(c *gin.Context)  {
-	c.String(200,"hello gin")
+func Post(cxt *utils.Context)  {
+	cxt.Fail("登录失败",422)
 }

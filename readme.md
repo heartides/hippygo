@@ -31,3 +31,39 @@ Golang Learns Based On Gin
     └── logger.go
 
 ```
+
+> 扩展
+
+- 对gin的gin.Context中的JSON做一层封装，实现Success()、Fail()两个响应方法
+
+```golang
+// controller
+func Test(ctx *utils.Context){}
+
+// router
+router.GET("/test", utils.Handle(controller.Test))
+
+// 使用
+
+// 正确响应
+cxt.Success(gin.H{"name":"walker"})
+
+// 返回
+{
+    "code": 0,
+    "msg": "OK",
+    "data": {
+        "name": "walker"
+    }
+}
+
+// 错误响应
+cxt.Fail("登录失败",422)
+
+// 返回
+{
+    "code": 422,
+    "msg": "登录失败"
+}
+    
+```
