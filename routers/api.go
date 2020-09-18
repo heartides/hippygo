@@ -6,7 +6,7 @@ import (
 	"learning/utils"
 )
 
-// controller 路由定义
+// 路由定义
 func InitApiRouter() *gin.Engine {
 	router := gin.Default()
 
