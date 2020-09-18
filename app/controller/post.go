@@ -43,11 +43,9 @@ func Delete(cxt *utils.Context) {
 // 查
 func Search(cxt *utils.Context) {
 	keyword := cxt.Query("keyword")
-
 	result := db.Where("title like ?", "%"+keyword+"%").Find(&model.Posts{})
-
 	if result.RecordNotFound() {
-		cxt.Fail(1, "错误："+result.Error.Error())
+		cxt.Fail(1, "语法或系统发生错误", result.Error)
 		return
 	}
 	cxt.Success("查询结果", gin.H{"result": result.Value})

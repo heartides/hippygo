@@ -46,7 +46,7 @@ router.GET("/test", utils.Handle(controller.Test))
 // 使用
 
 // 正确响应
-cxt.Success(gin.H{"name":"walker"})
+cxt.Success("OK",gin.H{"name":"walker"})
 
 // 返回
 {
@@ -58,7 +58,7 @@ cxt.Success(gin.H{"name":"walker"})
 }
 
 // 错误响应
-cxt.Fail("登录失败",422)
+cxt.Fail(422,登录失败")
 
 // 返回
 {
