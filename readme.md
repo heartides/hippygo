@@ -7,28 +7,32 @@ Golang Learns Based On Gin
 
 > 基本方案
 ```bash
-├── app # 应用中心
+├── app
 │   ├── controller # 控制器
-│   │   └── post.go
-│   └── model # 数据模型
-│       └── user.go
-├── conf # 配置中心
-│   └── conf.go
-├── databases # 数据库中心
-│   ├── migration.go # 数据迁移生成
+│   │   └── post.go 
+│   ├── middleware  # 中间件
+│   │   └── example.go
+│   └── model   # 数据处理
+│       └── Posts.go
+├── conf    # 配置中心
+│   ├── conf.go
+│   ├── mysql.go
+│   └── redis.go
+├── databases # 数据库实例
+│   ├── migration.go
 │   └── mysql.go
 ├── go.mod
 ├── go.sum
 ├── main.go
 ├── readme.md
-├── routers # 路由
+├── routers # 路由中心
 │   └── api.go
 ├── tmp # 临时目录
-├── .env # 环境变量
-├── .gitignore
 └── utils # 工具包
+    ├── context.go
     ├── hyper.go
-    └── logger.go
+    ├── logger.go
+    └── response.go
 
 ```
 
