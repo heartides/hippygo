@@ -6,7 +6,6 @@ import (
 	"learning/routers"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -15,7 +14,6 @@ var (
 )
 
 func main() {
-	log.Println(os.Getenv("GIN_MODE"))
 	apiRouter := &http.Server{
 		Addr:         ":3030",
 		Handler:      routers.InitApiRouter(),

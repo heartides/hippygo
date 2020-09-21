@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+var Cache *redis.Client
+
 func ConfRedis() *redis.Client {
 	db, _ := strconv.ParseInt(os.Getenv("REDIS_DB"), 10, 64)
 
@@ -15,6 +17,7 @@ func ConfRedis() *redis.Client {
 		DB:         int(db),
 		MaxRetries: 1,
 	})
+	Cache = client
 
 	return client
 }

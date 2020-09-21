@@ -19,5 +19,11 @@ func InitApiRouter() *gin.Engine {
 		posts.GET("/search", utils.Handle(controller.Search))
 	}
 
+	cache := router.Group("/cache")
+	{
+		cache.POST("/set", utils.Handle(controller.RedisSet))
+		cache.POST("/get", utils.Handle(controller.RedisGet))
+	}
+
 	return router
 }
